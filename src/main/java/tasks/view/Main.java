@@ -19,7 +19,7 @@ import java.io.IOException;
 
 public class Main extends Application {
     public static Stage primaryStage;
-    private static final int defaultWidth = 820;
+    private static final int DEFAULTWIDTH = 820;
     private static final int defaultHeight = 520;
 
     private static final Logger log = Logger.getLogger(Main.class.getName());
