@@ -4,6 +4,7 @@ package tasks.model;
 
 import org.apache.log4j.Logger;
 
+import java.io.Serializable;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -45,6 +46,11 @@ public class LinkedTaskList  extends TaskList {
     }
     private int numberOfTasks;
     private Node last;
+
+    public LinkedTaskList(){
+        numberOfTasks = 0;
+        last = null;
+    }
 
     @Override
     public void add(Task task) {
@@ -109,7 +115,7 @@ public class LinkedTaskList  extends TaskList {
         return new LinkedTaskListIterator();
     }
 
-    private static class Node {
+    private static class Node implements Serializable {
         private Task task;
         private Node last;
         private Node next;
@@ -176,12 +182,12 @@ public class LinkedTaskList  extends TaskList {
                 ", last=" + last +
                 '}';
     }
-    @Override
-    protected LinkedTaskList clone() throws CloneNotSupportedException {
-        LinkedTaskList tasks = new LinkedTaskList();
-        for (Task t : this){
-            tasks.add(t);
+
+    public LinkedTaskList(ArrayTaskList other) {
+        numberOfTasks = 0;
+        last = null;
+        for (int i = 0; i < other.size(); i++) {
+            add(other.getTask(i));
         }
-        return tasks;
     }
 }

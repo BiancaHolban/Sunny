@@ -16,9 +16,9 @@ import java.util.Date;
 public class TaskIO {
     private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("[yyyy-MM-dd HH:mm:ss.SSS]");
     private static final String[] TIME_ENTITY = {" day"," hour", " minute"," second"};
-    private static final int secondsInDay = 86400;
-    private static final int secondsInHour = 3600;
-    private static final int secondsInMin = 60;
+    private static final int SECONDS_IN_DAY = 86400;
+    private static final int SECONDS_IN_HOUR = 3600;
+    private static final int SECONDS_IN_MIN = 60;
     private static final String EXCEPTION = "IO exception reading or writing file";
     private static final Logger log = Logger.getLogger(TaskIO.class.getName());
     public static void write(TaskList tasks, OutputStream out) throws IOException {
@@ -79,7 +79,8 @@ public class TaskIO {
             log.error(EXCEPTION);
         }
         finally {
-            fos.close();
+            if(fos!=null)
+                fos.close();
         }
     }
 
@@ -93,7 +94,8 @@ public class TaskIO {
             log.error(EXCEPTION);
         }
         finally {
-            fis.close();
+            if(fis!=null)
+                fis.close();
         }
     }
     public static void write(TaskList tasks, Writer out) throws IOException {
@@ -191,13 +193,13 @@ public class TaskIO {
         int result = 0;
         for (int p = 0; p < timeEntities.length; p++){
             if (timeEntities[p] != 0 && p == 0){
-                result+=secondsInDay*timeEntities[p];
+                result+= SECONDS_IN_DAY *timeEntities[p];
             }
             if (timeEntities[p] != 0 && p == 1){
-                result+=secondsInHour*timeEntities[p];
+                result+= SECONDS_IN_HOUR *timeEntities[p];
             }
             if (timeEntities[p] != 0 && p == 2){
-                result+=secondsInMin*timeEntities[p];
+                result+= SECONDS_IN_MIN *timeEntities[p];
             }
             if (timeEntities[p] != 0 && p == 3){
                 result+=timeEntities[p];
@@ -267,10 +269,10 @@ public class TaskIO {
         if (interval <= 0) throw new IllegalArgumentException("Interval <= 0");
         StringBuilder sb = new StringBuilder();
 
-        int days = interval/secondsInDay;
-        int hours = (interval - secondsInDay*days) / secondsInHour;
-        int minutes = (interval - (secondsInDay*days + secondsInHour*hours)) / secondsInMin;
-        int seconds = (interval - (secondsInDay*days + secondsInHour*hours + secondsInMin*minutes));
+        int days = interval/ SECONDS_IN_DAY;
+        int hours = (interval - SECONDS_IN_DAY *days) / SECONDS_IN_HOUR;
+        int minutes = (interval - (SECONDS_IN_DAY *days + SECONDS_IN_HOUR *hours)) / SECONDS_IN_MIN;
+        int seconds = (interval - (SECONDS_IN_DAY *days + SECONDS_IN_HOUR *hours + SECONDS_IN_MIN *minutes));
 
         int[] time = new int[]{days, hours, minutes, seconds};
         int i = 0, j = time.length-1;
