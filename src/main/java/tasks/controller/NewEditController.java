@@ -6,16 +6,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 import tasks.model.Task;
 import tasks.services.DateService;
 import tasks.services.TaskIO;
+import tasks.services.TaskValidator;
 import tasks.services.TasksService;
 
 import java.io.IOException;
@@ -78,25 +76,23 @@ public class NewEditController {
 
     public void setCurrentTask(Task task){
         this.currentTask=task;
-        switch (clickedButton.getId()){
-            case  "btnNew" : initNewWindow("New Task");
-                break;
-            case "btnEdit" : initEditWindow("Edit Task");
-                break;
-        }
+            switch (clickedButton.getId()) {
+                case "btnNew":
+                    initNewWindow("New Task");
+                    break;
+                case "btnEdit":
+                    initEditWindow("Edit Task");
+                    break;
+                default:
+                    break;
+            }
     }
 
     @FXML
     public void initialize(){
         log.info("new/edit window initializing");
-//        switch (clickedButton.getId()){
-//            case  "btnNew" : initNewWindow("New Task");
-//                break;
-//            case "btnEdit" : initEditWindow("Edit Task");
-//                break;
-//        }
-
     }
+
     private void initNewWindow(String title){
         currentStage.setTitle(title);
         datePickerStart.setValue(LocalDate.now());
@@ -187,6 +183,15 @@ public class NewEditController {
         }
         return result;
     }
+
+    private Task createRepeatedTask(String title, Date startDate, Date endDate, int interval) {
+
+        TaskValidator taskValidator = new TaskValidator();
+        taskValidator.validate(title, startDate, endDate, interval);
+
+         return new Task(title, startDate, endDate, interval);
+    }
+
     private Task makeTask(){
         Task result;
         String newTitle = fieldTitle.getText();
@@ -196,15 +201,15 @@ public class NewEditController {
             Date endDateWithNoTime = dateService.getDateValueFromLocalDate(datePickerEnd.getValue());
             Date newEndDate = dateService.getDateMergedWithTime(txtFieldTimeEnd.getText(), endDateWithNoTime);
             int newInterval = service.parseFromStringToSeconds(fieldInterval.getText());
-            if (newStartDate.after(newEndDate)) throw new IllegalArgumentException("Start date should be before end");
-            result = new Task(newTitle, newStartDate,newEndDate, newInterval);
+
+            result = createRepeatedTask(newTitle, newStartDate, newEndDate, newInterval);
         }
         else {
             result = new Task(newTitle, newStartDate);
         }
         boolean isActive = checkBoxActive.isSelected();
         result.setActive(isActive);
-        System.out.println(result);
+        log.info(result);
         return result;
     }
 
