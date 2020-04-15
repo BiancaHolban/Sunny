@@ -6,7 +6,7 @@ import java.util.*;
 
 public class TasksOperations {
 
-    List<Task> tasks;
+    public ArrayList<Task> tasks;
 
     public TasksOperations(ObservableList<Task> tasksList){
         tasks=new ArrayList<>();
@@ -14,15 +14,38 @@ public class TasksOperations {
     }
 
     public Iterable<Task> incoming(Date start, Date end){
+        System.out.println(start);
+        System.out.println(end);
         ArrayList<Task> incomingTasks = new ArrayList<>();
         for (Task t : tasks) {
             Date nextTime = t.nextTimeAfter(start);
             if (nextTime != null && (nextTime.before(end) || nextTime.equals(end))) {
                 incomingTasks.add(t);
+                System.out.println(t.getTitle());
             }
         }
         return incomingTasks;
     }
+
+
+    public Iterable<Task>tasksByTitle(String title) throws IllegalArgumentException{
+        if(title.length()>25)
+            throw new IllegalArgumentException("Lungimea introdusa este prea mare");
+        if(title.equals(""))
+            throw new IllegalArgumentException("Câmpul introdus este vid");
+        ArrayList<Task> filteredTask=new ArrayList<>();
+        int i=0;
+        while(i<tasks.size())
+        {
+            Task t=tasks.get(i);
+            if(t.getTitle().contains(title)){
+                filteredTask.add(t);
+            }
+            i++;
+        }
+        return filteredTask;
+    }
+
     public SortedMap<Date, Set<Task>> calendar( Date start, Date end){
         Iterable<Task> incomingTasks = incoming(start, end);
         TreeMap<Date, Set<Task>> calendar = new TreeMap<>();
