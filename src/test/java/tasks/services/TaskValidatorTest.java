@@ -40,10 +40,10 @@ class TaskValidatorTest {
 
     // ECP tests
     @Test
-    @Order(1)
-    @Tag("ECP")
-    @Tag("Title")
-    @Tag("Exception")
+//    @Order(1)
+//    @Tag("ECP")
+//    @Tag("Title")
+//    @Tag("Exception")
     void testEmptyTaskTitle() {
         title = "";
         IllegalArgumentException thrown = assertThrows(
@@ -56,26 +56,26 @@ class TaskValidatorTest {
     }
 
     @Test
-    @Order(2)
-    @Tag("ECP")
-    @Tag("Title")
+//    @Order(2)
+//    @Tag("ECP")
+//    @Tag("Title")
     void testValidTaskTitle(){
         taskValidator.validate(title, startDate, endDate, interval);
     }
 
     @Test
-    @Order(3)
-    @Tag("ECP")
-    @Tag("Date")
+//    @Order(3)
+//    @Tag("ECP")
+//    @Tag("Date")
     void testValidDates(){
         taskValidator.validate(title, startDate, endDate, interval);
     }
 
     @Test
-    @Order(4)
-    @Tag("ECP")
-    @Tag("Date")
-    @Tag("Exception")
+//    @Order(4)
+//    @Tag("ECP")
+//    @Tag("Date")
+//    @Tag("Exception")
     void testInvalidDates(){
         try {
             startDate = getDateFromString("07-07-2020 10:00:00");
@@ -94,10 +94,10 @@ class TaskValidatorTest {
 
     // BVA tests
     @Test
-    @Order(5)
-    @Tag("BVA")
-    @Tag("Interval")
-    @Tag("Exception")
+//    @Order(5)
+//    @Tag("BVA")
+//    @Tag("Interval")
+//    @Tag("Exception")
     void testLeftMinIntervalValue(){
         interval = 0;
         IllegalArgumentException thrown = assertThrows(
@@ -110,28 +110,28 @@ class TaskValidatorTest {
     }
 
     @Test
-    @Order(6)
-    @Tag("BVA")
-    @Tag("Interval")
+//    @Order(6)
+//    @Tag("BVA")
+//    @Tag("Interval")
     void testMinIntervalValue(){
         interval = 1;
         taskValidator.validate(title, startDate, endDate, interval);
     }
 
     @Test
-    @Order(7)
-    @Tag("BVA")
-    @Tag("Interval")
+//    @Order(7)
+//    @Tag("BVA")
+//    @Tag("Interval")
     void testRightMinIntervalValue(){
         interval = 2;
         taskValidator.validate(title, startDate, endDate, interval);
     }
 
     @Test
-    @Order(8)
-    @Tag("BVA")
-    @Tag("Interval")
-    @Tag("Exception")
+//    @Order(8)
+////    @Tag("BVA")
+////    @Tag("Interval")
+////    @Tag("Exception")
     @Disabled
     void testInvalidLeftIntervalValue(){
         interval = -1;
