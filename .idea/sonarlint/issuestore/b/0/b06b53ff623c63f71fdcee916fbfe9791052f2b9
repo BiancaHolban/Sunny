@@ -1,0 +1,35 @@
+
+X
+java:S2696"6Make the enclosing method "static" or remove this set.(Ý´ýýúÿÿÿÿ8úä¼ª—.
+N
+java:S1128
+"1Remove this unused import 'tasks.model.TaskList'.(‡Ž¾Ó8Êî¢©—.
+X
+java:S2696!"6Make the enclosing method "static" or remove this set.(ùç‹œüÿÿÿÿ8åšÜª—.
+X
+java:S2696""6Make the enclosing method "static" or remove this set.(ÄÛý›üÿÿÿÿ8˜“þª—.
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¿×öŸøÿÿÿÿ8ò¹çª—.
+S
+java:S2696B"6Make the enclosing method "static" or remove this set.(öÌªÑ8µ¥‹¼—.
+X
+java:S26967"6Make the enclosing method "static" or remove this set.(Ãˆ¡úüÿÿÿÿ8Ó¶¬ª—.
+E
+java:S1148$"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8˜“þª—.
+s
+java:S1450"VRemove the "endDate" field and declare it as a local variable in the relevant methods.(ÊÄ”€8˜“þª—.
+I
+java:S1068",Remove this unused "interval" private field.(Î¤¼é8œß“¨—.
+H
+java:S1068"+Remove this unused "endDate" private field.(ÊÄ”€8œß“¨—.
+S
+java:S1128"6Remove this unused import 'tasks.model.ArrayTaskList'.(Žù‚ü8Úýõ¨—.
+B
+java:S1659"%Declare "endDate" on a separate line.(ÊÄ”€8ö‡Ø§—.
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8µ¥‹¼—.
+t
+java:S1450"WRemove the "interval" field and declare it as a local variable in the relevant methods.(Î¤¼é8˜“þª—.
+Y
+java:S1128"<Remove this unused import 'org.junit.jupiter.api.BeforeAll'.(—¦¹î8¤ã“ª—.
+S
+java:S2696"6Make the enclosing method "static" or remove this set.(Ýƒ»Á8˜“þª—.

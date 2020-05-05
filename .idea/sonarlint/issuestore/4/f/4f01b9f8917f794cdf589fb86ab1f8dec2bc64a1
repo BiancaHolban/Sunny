@@ -1,0 +1,10 @@
+
+’
+java:S1319	"pThe type of the "tasks" object should be an interface such as "List" rather than the implementation "ArrayList".(±ψΆΘϋÿÿÿÿ8¥Δ©Ώ.
+s
+java:S1104	"QMake tasks a static final constant or non-public and provide accessors if needed.(±ψΆΘϋÿÿÿÿ8¥Δ©Ώ.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(χΊβÿÿÿÿÿÿ8¥Δ©Ώ.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Γέκωÿÿÿÿ8¥Δ©Ώ.
+T	java:S106"9Replace this use of System.out or System.err by a logger.(ΣΡ8¥Δ©Ώ.
+
+java:S1130"mRemove the declaration of thrown exception 'java.lang.IllegalArgumentException' which is a runtime exception.(¶®›ϊÿÿÿÿ8¥Δ©Ώ.

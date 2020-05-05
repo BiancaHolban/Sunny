@@ -1,0 +1,50 @@
+
+f
+java:S3027­"JPut single-quotes around ']' to use the faster "lastIndexOf(char)" method.(®Ñ­Õúÿÿÿÿ
+E
+java:S2093"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+H
+java:S2885"-Make "simpleDateFormat" an instance variable.(ËÒÌıøÿÿÿÿ
+]
+java:S3027Ú"FPut single-quotes around ']' to use the faster "indexOf(char)" method.(ÏÙã™
+E
+java:S2093~"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+b
+java:S3027ß"FPut single-quotes around ']' to use the faster "indexOf(char)" method.(¼ÅÈ¶ÿÿÿÿÿ
+6
+java:S1659–"Declare "j" on a separate line.(±é…
+=
+java:S1659Ö"!Declare "end" on a separate line.(ÍôÁÑıÿÿÿÿ
+f
+java:S3027¬"JPut single-quotes around '[' to use the faster "lastIndexOf(char)" method.(Šöèéıÿÿÿÿ
+E
+java:S2093Y"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+g
+java:S3027í"KPut single-quotes around '\"' to use the faster "lastIndexOf(char)" method.(Ê·«Ãûÿÿÿÿ
+]
+java:S3027İ"FPut single-quotes around ']' to use the faster "indexOf(char)" method.(¶…¦
+U
+java:S1118":Add a private constructor to hide the implicit public one.(Ğœê†úÿÿÿÿ
+]
+java:S3027Ş"FPut single-quotes around '[' to use the faster "indexOf(char)" method.(†Ùí”
+W	java:S125»"<This block of commented-out lines of code should be removed.(À›¸Öûÿÿÿÿ
+n
+java:S3776§"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(œÂÁñøÿÿÿÿ
+F
+java:S2093‹"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+?
+java:S1659¨"#Declare "hours" on a separate line.(ÚåÏ¾üÿÿÿÿ
+A
+java:S1659¨"%Declare "minutes" on a separate line.(ÚåÏ¾üÿÿÿÿ
+E
+java:S2093J"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+K
+java:S14813"0Remove this unused "titleLength" local variable.(ìôå‰ÿÿÿÿÿ
+E
+java:S20930"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+]
+java:S3027Ù"FPut single-quotes around '[' to use the faster "indexOf(char)" method.(÷…‹
+A
+java:S1659¨"%Declare "seconds" on a separate line.(ÚåÏ¾üÿÿÿÿ
+;
+java:S1659µ"Declare "j" on a separate line.(Ù é®şÿÿÿÿ
