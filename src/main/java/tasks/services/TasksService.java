@@ -16,6 +16,9 @@ public class TasksService {
         this.tasks = tasks;
     }
 
+    public void addTask(Task t){
+        tasks.add(t);
+    }
 
     public ObservableList<Task> getObservableList(){
         return FXCollections.observableArrayList(tasks.getAll());
